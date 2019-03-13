@@ -80,7 +80,16 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
             this._convertedData = _clone(template, true);
             this._parseBasic();            
             this._parseAnnotations(this._data.text, this._data.denotations);
-            this._renderData();
+            //this._renderData();
+            this.dispatchEvent(new CustomEvent(
+                'ready', {
+                    detail: {
+                        data: this._convertedData
+                    },
+                    bubbles: true,
+                    cancelable: true
+                }
+            ));
         }
     }
 
@@ -125,16 +134,7 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
         const s = document.createElement('script');
         s.type = 'application/ld+json';
         s.innerHTML = JSON.stringify(this._convertedData, null, 2);
-        document.body.appendChild(s);
-        this.dispatchEvent(new CustomEvent(
-            'ready', {
-                detail: {
-                    data: this._convertedData
-                },
-                bubbles: true,
-                cancelable: true
-            }
-        ));
+        document.body.appendChild(s);        
     }    
 }
 
