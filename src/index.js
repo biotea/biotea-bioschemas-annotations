@@ -14,7 +14,11 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
         this._data = undefined;
     }
 
-    static get observedAttributes() { return ["queryurl", "publisher", "version", "articledoi", "articleid", "loading"]; }
+    static get observedAttributes() { return ["render", "queryurl", "publisher", "version", "articledoi", "articleid", "loading"]; }
+
+    get render() {
+        return (this.getAttribute("render"));
+    }
 
     get loading() {
         return (this.getAttribute("loading"));
@@ -80,7 +84,9 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
             this._convertedData = _clone(template, true);
             this._parseBasic();            
             this._parseAnnotations(this._data.text, this._data.denotations);
-            //this._renderData();
+            if (this.render != null) {
+                this._renderData();
+            }
             this.dispatchEvent(new CustomEvent(
                 'ready', {
                     detail: {
