@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>biotea-bioschemas-annotations-demo</title>
+
+</head>
+<body>
+<biotea-bioschemas-annotations publisher="http://biotea.github.io" version="201903" queryurl="../resources/PMC35353_pubannotations.json" articleid="35353" articledoi="10.1186/1471-2156-2-9">
+
+<script src="../dist/BioteaBioschemasAnnotations.js" charset="utf-8" defer></script>
+
+<script>
+    window.onload = () => {
+        for (const el of document.querySelectorAll('biotea-bioschemas-annotations')) {
+          el.addEventListener(
+            'load',
+            e => {
+              console.log('Data loaded');
+              console.log(e.detail);
+            }
+          );
+          el.addEventListener(
+            'ready',
+            e => {
+              console.log('ready');
+              console.log(e.detail);
+            }
+          );
+        }
+    }     
+</script>
+
+</body>
+</html>
