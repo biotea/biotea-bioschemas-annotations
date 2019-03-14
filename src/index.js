@@ -52,6 +52,22 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
         this.setAttribute("queryurl", value);
     }
 
+    set publisher(value) {
+        this.setAttribute("publisher", value);
+    }
+
+    set version(value) {
+        this.setAttribute("version", value);
+    }
+
+    set articleid(value) {
+        this.setAttribute("articleid", value);
+    }
+
+    set articledoi(value) {
+        this.setAttribute("articledoi", value);
+    }
+
     getData() {
         return this._data;
     }
@@ -120,7 +136,9 @@ class BioteaBioschemasAnnotations extends HTMLElement  {
 
     _createAnnotation(annText, text) {
         let myAnn = _clone(semAnn, true);
-        myAnn.isSubjectoOf += this.articledoi;
+        myAnn.subjectOf = this.articledoi.indexOf('doi.org') !== -1 
+            ? this.articledoi
+            : 'https://doi.org/' + this.articledoi;
         myAnn.text = text;
         myAnn.mainEntity = [];
         annText.forEach((el) => {

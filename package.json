@@ -1,8 +1,8 @@
 {
-  "name": "biotea-bioschemas-metadata",
+  "name": "biotea-bioschemas-annotations",
   "version": "0.0.1",
-  "description": "Generator of PMC article metadata following Bioschemas profiles",
-  "main": "dist/BioteaBioschemasMetadata.js",
+  "description": "Generator of PMC article annotations following Bioschemas draft profiles for scholarly publications",
+  "main": "dist/BioteaBioschemasAnnotations.js",
   "module": "src/index.js",
   "jsnext:main": "src/index.js",
   "scripts": {
@@ -13,19 +13,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/biotea/biotea-bioschemas-metadata.git"
+    "url": "git+https://github.com/biotea/biotea-bioschemas-annotations.git"
   },
   "keywords": [
     "Biotea",
     "Bioschemas",
-    "metadata"
+    "metadata",
+    "semantic annotations"
   ],
   "author": "biotea",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/biotea/biotea-bioschemas-metadata/issues"
+    "url": "https://github.com/biotea/biotea-bioschemas-annotations/issues"
   },
-  "homepage": "https://github.com/biotea/biotea-bioschemas-metadata#readme",
+  "homepage": "https://github.com/biotea/biotea-bioschemas-annotations#readme",
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
@@ -43,7 +44,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "fast-xml-parser": "^3.12.13",
     "lodash-es": "^4.17.4"
   }
 }
