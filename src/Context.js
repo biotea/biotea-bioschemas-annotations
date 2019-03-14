@@ -13,7 +13,9 @@ export const template = {
 export const semAnn = {
     "@type": ["CreativeWork", "SemanticAnnotation"],
     "subjectOf": "https://doi.org/", 
+    "creator": "",
     "text": "",
+    "commentCount": "",
     "mainEntity": []
 };
 
